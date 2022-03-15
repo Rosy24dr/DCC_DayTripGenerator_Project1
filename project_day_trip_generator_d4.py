@@ -12,6 +12,8 @@ random_entertainment = random.choice(entertainments)
 
 def welcome_msg():
     print('Hello, welcome to the day trip calculator where we can help you choose your destination.')
+
+def random_selection():
     print(f'We have selected {random_destination}. You will be traveling by {random_transportation}, then you will eat at {random_restaurant} and enjoy yourself while {random_entertainment}.')
 
 def input_from_user_destination():
@@ -62,7 +64,22 @@ def input_from_user_entertainment():
             user_input_entertainment = input(f"I am sorry this form of entertainment didn't work for you. Does {random_entertainment}  work for you? Please enter yes or no:")
             continue
 
+def trip_results():
+    print("Destination: " + random_destination)
+    print("Restaurant: " + random_restaurant)
+    print("Transportation: " + random_transportation)
+    print("Entertainment: " + random_entertainment)
+
+def finalized_trip():
+    user_input_finalize_trip = (input('Would you like to finalize this trip? Please enter yes or no:'))
+    if (user_input_finalize_trip == 'yes'):
+        print(f'We have selected {random_destination}. You will be traveling by {random_transportation}, then you will eat at {random_restaurant} and enjoy yourself while {random_entertainment}.')
+    elif(user_input_finalize_trip == 'no'):
+        user_input_finalize_trip = input("I am sorry you did not like the choices. Let's start the process again.")
+        
+
 welcome_msg()
+random_selection()
 input_from_user_destination()
 input_from_user_restaurant()
 input_from_user_transportation()
@@ -70,13 +87,15 @@ input_from_user_entertainment()
 
 print("Congrats! We have completed generating your day trip. Now let's just confirm that this is the trip you wanted. The trip we have generated for you is:")
 
-def trip_results():
-    print("Destination: " + random_destination)
-    print("Restaurant: " + random_restaurant)
-    print("Transportation: " + random_transportation)
-    print("Entertainment: " + random_entertainment)
-
 trip_results()
+finalized_trip()
+
+
+
+
+
+
+
 
 
 
