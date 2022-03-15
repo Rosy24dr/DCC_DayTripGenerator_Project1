@@ -16,53 +16,20 @@ def welcome_msg():
 def random_selection():
     print(f'We have selected {random_destination}. You will be traveling by {random_transportation}, then you will eat at {random_restaurant} and enjoy yourself while {random_entertainment}.')
 
-def input_from_user_destination():
-    user_input_destination = input('Does this destination work for you? Please enter yes or no:')
-    
-    while (user_input_destination != True):
-        if (user_input_destination == 'yes'):
-            print("Great, glad this destination works. Now let's move on.")
+def input_from_user( ):
+    user_input = input('Does this work for you? Please enter yes or no:')
+    while (user_input != True):
+        if (user_input == 'yes'):
+            print("Congrats! We have completed generating your day trip. Now let's just confirm that this is the trip you wanted. The trip we have generated for you is:")
             return
-        elif (user_input_destination == 'no'):
+        elif (user_input == 'no'):
             random_destination = random.choice(destinations)
-            user_input_destination = input(f"I am sorry this destination didn't work for you. Does {random_destination}  work for you? Please enter yes or no:")
-            continue
-
-def input_from_user_transportation():
-    user_input_transportation = input('Does this way of transportation work for you? Please enter yes or no:')
-    
-    while (user_input_transportation != True):
-        if (user_input_transportation == 'yes'):
-            print("Great, glad this way of transportation works. Now let's move on.")
-            return
-        elif (user_input_transportation == 'no'):
-            random_transportation = random.choice(transportations)
-            user_input_transportation = input(f"I am sorry this way of transportation didn't work for you. Does {random_transportation}  work for you? Please enter yes or no:")
-            continue
-        
-def input_from_user_restaurant():
-    user_input_restaurant = input('Does this restaurant work for you? Please enter yes or no:')
-    
-    while (user_input_restaurant != True):
-        if (user_input_restaurant == 'yes'):
-            print("Great, glad this restaurant works. Now let's move on.")
-            return
-        elif (user_input_restaurant == 'no'):
             random_restaurant = random.choice(restaurants)
-            user_input_restaurant = input(f"I am sorry this restaurant didn't work for you. Does {random_restaurant}  work for you? Please enter yes or no:")
+            random_transportation = random.choice(transportations)
+            random_entertainment = random.choice(entertainments)
+            user_input = input(f"I am sorry this didn't work for you. Does {random_destination} {random_restaurant} {random_transportation} {random_entertainment} work for you? Please enter yes or no:")
             continue
 
-def input_from_user_entertainment():
-    user_input_entertainment = input('Does this form of entertainment work for you? Please enter yes or no:')
-    
-    while (user_input_entertainment != True):
-        if (user_input_entertainment == 'yes'):
-            print("Great, glad this form of entertainment works. Now let's move on.")
-            return
-        elif (user_input_entertainment== 'no'):
-            random_entertainment = random.choice(entertainments)
-            user_input_entertainment = input(f"I am sorry this form of entertainment didn't work for you. Does {random_entertainment}  work for you? Please enter yes or no:")
-            continue
 
 def trip_results():
     print("Destination: " + random_destination)
@@ -80,13 +47,7 @@ def finalized_trip():
 
 welcome_msg()
 random_selection()
-input_from_user_destination()
-input_from_user_restaurant()
-input_from_user_transportation()
-input_from_user_entertainment()
-
-print("Congrats! We have completed generating your day trip. Now let's just confirm that this is the trip you wanted. The trip we have generated for you is:")
-
+input_from_user()
 trip_results()
 finalized_trip()
 
@@ -95,6 +56,41 @@ finalized_trip()
 
 
 
+# def input_from_user_transportation():
+#     user_input_transportation = input('Does this way of transportation work for you? Please enter yes or no:')
+    
+#     while (user_input_transportation != True):
+#         if (user_input_transportation == 'yes'):
+#             print("Great, glad this way of transportation works. Now let's move on.")
+#             return
+#         elif (user_input_transportation == 'no'):
+#             random_transportation = random.choice(transportations)
+#             user_input_transportation = input(f"I am sorry this way of transportation didn't work for you. Does {random_transportation}  work for you? Please enter yes or no:")
+#             continue
+        
+# def input_from_user_restaurant():
+#     user_input_restaurant = input('Does this restaurant work for you? Please enter yes or no:')
+    
+#     while (user_input_restaurant != True):
+#         if (user_input_restaurant == 'yes'):
+#             print("Great, glad this restaurant works. Now let's move on.")
+#             return
+#         elif (user_input_restaurant == 'no'):
+#             random_restaurant = random.choice(restaurants)
+#             user_input_restaurant = input(f"I am sorry this restaurant didn't work for you. Does {random_restaurant}  work for you? Please enter yes or no:")
+#             continue
+
+# def input_from_user_entertainment():
+#     user_input_entertainment = input('Does this form of entertainment work for you? Please enter yes or no:')
+    
+#     while (user_input_entertainment != True):
+#         if (user_input_entertainment == 'yes'):
+#             print("Great, glad this form of entertainment works. Now let's move on.")
+#             return
+#         elif (user_input_entertainment== 'no'):
+#             random_entertainment = random.choice(entertainments)
+#             user_input_entertainment = input(f"I am sorry this form of entertainment didn't work for you. Does {random_entertainment}  work for you? Please enter yes or no:")
+#             continue
 
 
 
