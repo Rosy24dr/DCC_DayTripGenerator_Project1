@@ -22,18 +22,8 @@ def input_from_user_destination():
             print("Great, glad this destination works. Now let's move on.")
             return
         elif (user_input_destination == 'no'):
-            user_input_destination = input(f"I am sorry this destination didn't work for you. Does {random.choice(destinations)}  work for you? Please enter yes or no:")
-            continue
-        
-def input_from_user_restaurant():
-    user_input_restaurant = input('Does this restaurant work for you? Please enter yes or no:')
-    
-    while (user_input_restaurant != True):
-        if (user_input_restaurant == 'yes'):
-            print("Great, glad this restaurant works. Now let's move on.")
-            return
-        elif (user_input_restaurant == 'no'):
-            user_input_restaurant = input(f"I am sorry this restaurant didn't work for you. Does {random.choice(restaurants)}  work for you? Please enter yes or no:")
+            random_destination = random.choice(destinations)
+            user_input_destination = input(f"I am sorry this destination didn't work for you. Does {random_destination}  work for you? Please enter yes or no:")
             continue
 
 def input_from_user_transportation():
@@ -44,7 +34,20 @@ def input_from_user_transportation():
             print("Great, glad this way of transportation works. Now let's move on.")
             return
         elif (user_input_transportation == 'no'):
-            user_input_transportation = input(f"I am sorry this way of transportation didn't work for you. Does {random.choice(transportations)}  work for you? Please enter yes or no:")
+            random_transportation = random.choice(transportations)
+            user_input_transportation = input(f"I am sorry this way of transportation didn't work for you. Does {random_transportation}  work for you? Please enter yes or no:")
+            continue
+        
+def input_from_user_restaurant():
+    user_input_restaurant = input('Does this restaurant work for you? Please enter yes or no:')
+    
+    while (user_input_restaurant != True):
+        if (user_input_restaurant == 'yes'):
+            print("Great, glad this restaurant works. Now let's move on.")
+            return
+        elif (user_input_restaurant == 'no'):
+            random_restaurant = random.choice(restaurants)
+            user_input_restaurant = input(f"I am sorry this restaurant didn't work for you. Does {random_restaurant}  work for you? Please enter yes or no:")
             continue
 
 def input_from_user_entertainment():
@@ -55,7 +58,8 @@ def input_from_user_entertainment():
             print("Great, glad this form of entertainment works. Now let's move on.")
             return
         elif (user_input_entertainment== 'no'):
-            user_input_entertainment= input(f"I am sorry this form of entertainment didn't work for you. Does {random.choice(entertainments)}  work for you? Please enter yes or no:")
+            random_entertainment = random.choice(entertainments)
+            user_input_entertainment = input(f"I am sorry this form of entertainment didn't work for you. Does {random_entertainment}  work for you? Please enter yes or no:")
             continue
 
 welcome_msg()
@@ -67,10 +71,10 @@ input_from_user_entertainment()
 print("Congrats! We have completed generating your day trip. Now let's just confirm that this is the trip you wanted. The trip we have generated for you is:")
 
 def trip_results():
-    print(())
-    print(())
-    print(())
-    print(())
+    print(random_destination)
+    print(random_restaurant)
+    print(random_transportation)
+    print(random_entertainment)
 
 trip_results()
 
