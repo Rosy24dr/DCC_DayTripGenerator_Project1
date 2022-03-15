@@ -75,7 +75,5 @@ def trip_results():
 trip_results()
 
 
-12345
-
 
             
