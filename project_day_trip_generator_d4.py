@@ -71,10 +71,10 @@ input_from_user_entertainment()
 print("Congrats! We have completed generating your day trip. Now let's just confirm that this is the trip you wanted. The trip we have generated for you is:")
 
 def trip_results():
-    print(random_destination)
-    print(random_restaurant)
-    print(random_transportation)
-    print(random_entertainment)
+    print("Destination: " + random_destination)
+    print("Restaurant: " + random_restaurant)
+    print("Transportation: " + random_transportation)
+    print("Entertainment: " + random_entertainment)
 
 trip_results()
 
